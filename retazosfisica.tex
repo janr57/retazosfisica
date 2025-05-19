@@ -1,0 +1,53 @@
+% retazosfisica.tex
+% Fichero principal
+%
+% Copyright (C) 2025 José A. Navarro Ramón <janr.devel@gmail.com>
+% Licencia Creative Commons Recognition Share-alike.
+% (CC-BY-SA)
+
+\documentclass[a4paper,twoside]{book}
+
+% Paquetes
+\usepackage{retazosfisica.pkg}
+
+% Definiciones
+\usepackage{retazosfisica.defs}
+
+\begin{document}
+% -----------------------------------------------------------------------------
+% Portada
+\thispagestyle{empty}
+\include{./portada/portada}
+% -----------------------------------------------------------------------------
+% Tabla de contenidos
+\thispagestyle{empty}
+\include{./tablacontenidos/tablacontenidos}
+% -----------------------------------------------------------------------------
+\frontmatter
+\include{./prologo/prologo}
+% -----------------------------------------------------------------------------
+% Teoría
+\mainmatter
+%\part{Teoría}
+\include{./texto/mecanicaestadistica}
+% -----------------------------------------------------------------------------
+%% Apéndices
+%%\backmatter
+%%\part{Apéndices}
+%\appendix
+%\renewcommand{\thechapter}{A}
+%\clearpage
+%\addappheadtotoc
+%\appendixpage
+%%\include{./apendices/gl-momangcuantico-genfunciones}
+% -----------------------------------------------------------------------------
+
+\end{document}
+
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: luatex
+%%% TeX-master: t
+%%% End:
