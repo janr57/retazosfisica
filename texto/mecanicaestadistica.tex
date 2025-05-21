@@ -7,7 +7,7 @@
 \chapter{Mecánica estadística}
 La mecánica estadística es una herramienta muy útil en física para estudiar
 las propiedades macroscópicas de un sistema formado por un número enorme de
-partículas, sin tener en cuenta el estado individual de todas y cada una de
+partículas, sin tener en cuenta el movimiento individual de todas y cada una de
 ellas.
 
 Esto se lleva a cabo encontrando la configuración más probable de las
@@ -37,17 +37,16 @@ $N$ de partículas distinguibles de cualquier spin y que están lo
 suficientemente separadas entre sí como para que la única interacción entre
 ellas sea una colisión elástica; por tanto, se desprecia la interacción a
 distancia, esto es, la energía potencial de cualquier tipo.
-% [Arthur Beiser]
-
-Un ejemplo típico al que se le puede aplicar el modelo es el de un gas formado
-por moléculas ---átomos o grupos de átomos neutros---.
+Un ejemplo típico al que se le puede aplicar el modelo es el de un gas ideal
+formado por moléculas ---átomos o grupos de átomos neutros---.
 
 Las $N$ partículas, $n_1, n_2, \cdots, n_k$, se distribuyen entre $k$ estados
-de energía creciente,  $u_1, u_2, \cdots, u_k$ . Estos estados pueden ser,
-bien estados discretos o energías medias de una secuencia creciente de
-intervalos continuos. Incluso, como el modelo es clásico, el número de niveles
-$k$ puede ser muy elevado, y se podría considerar que estas forman un
-continuo (esto lo utilizaremos más tarde).
+de energía creciente,  $u_1, u_2, \cdots, u_k$. Cada correspondencia entre
+las $n_i$ y las $u_i$ es una \emph{partición}. Estos estados pueden ser, bien
+estados discretos o energías medias de una secuencia creciente de intervalos
+continuos. Incluso, como el modelo es clásico, el número de niveles $k$ puede
+ser muy elevado, y se podría considerar que estas forman un continuo (esto se
+tendrá en cuenta más tarde).
 
 En todo momento se conserva el número de partículas y la energía.
 \begin{equation}
@@ -58,14 +57,36 @@ y la energía:
   \sum_{i=1}^{k} n_i u_i = U
 \end{equation}
 
+En caso de que se quisiera tener en cuenta la energía potencial de interacción
+entre las partículas, tendríamos dos opciones:
+\begin{enumerate}
+\item Aplicar el método del \emph{campo autocompatible}. En este, se considera
+  para todas las partículas una energía potencial promedio, de manera que las
+  energías $u_i$ son la energía cinética $e_{ci}$, más esta energía
+  potencial promedio, $E_p$
+  \[
+    u_i = e_{ci} + E_p
+  \]
+\item La segunda opción es considerar gases reales, en lugar de ideales. Esta
+  situación se podría tratar más adelante.
+\end{enumerate}
+% [Alonso-Finn]
 
-
-
-
-
-
-
-
+\subsection{Probabilidad de una distribución}
+La probabilidad de una distribución está formada por dos factores
+\begin{enumerate}
+\item La \emph{probabilidad a priori} o \emph{intrínseca} $g_i$, que depende
+  exclusivamente de los niveles de energía, $u_i$, por ejemplo, un estado de
+  energía puede ser ocupado por partículas con varios estados distintos de
+  momento angular, mientras que otros estados solo admiten un único momento
+  angular.
+\item La \emph{probabilidad termodinámica} o de una partición concreta, que es
+  proporcional al número de configuraciones diferentes que producen esa
+  partición (o número de microestados compatibles}
+  \begin{equation}
+    \frac{N!}{\prod_{i=1}^{k} n_i}
+  \end{equation}
+\end{enumerate}
 
 
 
