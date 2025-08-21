@@ -11,7 +11,7 @@
 
 \chapter{Matriz Densidad}
 
-\section{Operador densidad}
+\section{Introducción}
 Vamos a utilizar un espacio de Hilbert $\left(\mathbb{C}^2\right)$, de
 dimensión 2, por comodidad
 \[
@@ -34,13 +34,191 @@ al bit clásico. Únicamente decir, por completitud, que por \emph{qbit} se
 entiende aquel vector que es una combinación lineal de estos dos vectores de la
 base
 \[
-  \bra{\Psi} = a \ket{0} + b \ket{1}
+  \ket{\Psi} = a \ket{0} + b \ket{1}
 \]
 pero no vamos a entrar en esto. Dejamos los \emph{qbits} a un lado.
 
 A partir de ahora solo consideramos tener un espacio de Hilbert de dimensión 2
 y estos dos vectores de la base.
 
+Como es costumbre cuando se trabaja en un espacio de dimensión finita, podemos
+utilizar una expresión matricial. Así, podremos representar los vectores de la
+base como
+\[
+  \ket{0} = \begin{pmatrix}1 \\ 0\end{pmatrix}
+  \hspace{4em}
+  \ket{1} = \begin{pmatrix}0 \\ 1\end{pmatrix}
+\]
+y sus duales
+\[
+  \bra{0} = \ket{0}^\dagger
+  = \begin{pmatrix}1 \\ 0\end{pmatrix}^\dagger
+  = \begin{pmatrix}1 & 0\end{pmatrix}
+  \hspace{4em}
+  \bra{1} = \ket{1}^\dagger
+  = \begin{pmatrix}0 \\ 1\end{pmatrix}^\dagger
+  = \begin{pmatrix}0 & 1\end{pmatrix}
+\]
+
+\subsection{Operadores autoadjuntos}
+En mecánica cuántica, un operador está asociado a un observable si el adjunto
+del operador coincide con él mismo, de manera que sus valores propios serían
+reales. Un operador así se llama autoadjunto
+\[
+  \hat{A}^\dagger = \hat{A}
+\]
+
+Cuando un operador $\hat{A}$ es autoadjunto, se puede encontrar una nueva base
+propia del operador
+\[
+  \{\ket{a_1}, \ket{a_2}\}
+\]
+que, por ser base es ortogonal, y por ser autoadjunto, sus valores propios son
+reales
+\begin{align*}
+  &\hat{A} \ket{a_1} = \lambda_1 \ket{a_1}\\
+  &\hat{A} \ket{a_2} = \lambda_2 \ket{a_2}
+\end{align*}
+donde $\lambda_{1}, \lambda_{2} \in \mathbb{R}$.
+Recordemos que estamos en un espacio de dimensión 2, pero esto también es
+válido para un espacio finito de dimensión superior.
+A menos que se diga lo contrario, los operadores que nos encontremos serán
+autoadjuntos.
+
+\subsection{Valor esperado de un operador}
+Supongamos que un sistema está descrito por el estado $\ket{\Psi}$. Nos
+preguntamos acerca del valor esperado de un operador cuando el sistema está en
+ese estado.
+
+Si estamos en un mundo de dimensión 2, y la base que utilizamos es
+$\{\ket{0}, \ket{1}\}$, el estado se puede expresar como una combinación lineal
+de los vectores de la base
+\[
+  \ket{\Psi} = a_0 \ket{0} + a_1 \ket{1}
+  \text{, donde }
+  a_i \in \mathbb{C}
+\]
+
+Se define el \emph{valor esperado del observable} $\hat{A}$, cuando el sistema
+está en el estado $\ket{\Psi}$, mediante el producto escalar
+\begin{align*}
+  \braket{\hat{A}}_{\Psi}
+  &= \braket{\Psi | \hat{A} | \Psi}
+  = \left(a_{0}^{*} \bra{0} + a_{1}^{*} \bra{1}\right)
+  \hat{A}
+    \left(a_{0} \ket{0} + a_{1} \ket{1}\right)\\
+  &= a_{0}^{*} a_{0} \braket{0|\hat{A}|0}
+    + a_{0}^{*} a_{1} \braket{0|\hat{A}|1}
+    + a_{1}^{*} a_{0} \braket{1|\hat{A}|0}
+    + a_{1}^{*} a_{1} \braket{1|\hat{A}|1}\\
+  &= a_{0} a_{0}^{*} \braket{0|\hat{A}|0}
+    + a_{1} a_{0}^{*} \braket{0|\hat{A}|1}
+    + a_{0} a_{1}^{*} \braket{1|\hat{A}|0}
+    + a_{1} a_{1}^{*} \braket{1|\hat{A}|1}\\
+  &= a_{0} a_{0}^{*} A_{00}
+    + a_{1} a_{0}^{*} A_{01}
+    + a_{0} a_{1}^{*} A_{10}
+    + a_{1} a_{1}^{*} A_{11}\\
+  &= \rho_{00} A_{00}
+    + \rho_{10} A_{01}
+    + \rho_{01} A_{10}
+    + \rho_{11} A_{11}
+\end{align*}
+donde hemos utilizado $A_{ij} = \braket{i|\hat{A}|j}$.
+
+Si ahora llamamos $\rho_{ij} = a_{i} a_{j}^{*}$, obtenemos
+\begin{equation}
+  \braket{\hat{A}}_{\Psi}
+  = \braket{\Psi | \hat{A} | \Psi}
+  = \rho_{00} A_{00}
+    + \rho_{10} A_{01}
+    + \rho_{01} A_{10}
+    + \rho_{11} A_{11}  
+\end{equation}
+Obsérvese que el valor esperado de un operador autoadjunto es un número real.
+
+Las $\rho_{ij}$ las podríamos interpretar como elementos de una matriz $2\times 2$.
+Por otro lado, sabemos por mecánica cuántica que las $A_{ij}$ son elemenntos de una
+matriz. Así que
+\[
+  \mmm{\rho}
+  = \begin{pmatrix}\rho_{00} & \rho_{01} \\ \rho_{10} & \rho_{11} \end{pmatrix}
+  ;\hspace{4em}
+  \mmm{A}
+  = \begin{pmatrix}A_{00} & A_{01} \\ A_{10} & A_{11} \end{pmatrix}
+\]
+
+Pero, al multiplicar estas dos matrices $2\times 2$ obtenemos otra matriz
+$2\times 2$, no un número, aunque, si nos fijamos en los elementos diagonales
+\[
+  \mmm{\rho} \mmm{A}
+  = \begin{pmatrix}\rho_{00} & \rho_{01} \\ \rho_{10} & \rho_{11} \end{pmatrix}
+  \begin{pmatrix}A_{00} & A_{01} \\ A_{10} & A_{11} \end{pmatrix}
+  = \begin{pmatrix}
+    \rho_{00} A_{00} + \rho_{01} A_{10} & \cdots \\
+    \cdots & \rho_{10} A_{01} + \rho_{11} A_{11}
+  \end{pmatrix}
+\]
+
+Pero, si nos fijamos en los elementos diagonales, observamos que el valor
+esperado es la suma de estos. La suma de los elementos diagonales de una matriz
+cuadrada es la \emph{traza}
+\[
+  \braket{\hat{A}}_{\Psi}
+  = \braket{\Psi|\hat{A}|\Psi}
+  = \text{Tr}(\mmm{\rho}\mmm{A})
+\]
+
+¿Por qué nos complicamos tanto para calcular el valor esperado de un observable
+en el estado $\ket{\Psi}$, si lo podemos calcular directamente como
+$\braket{\Psi|\hat{A}|\Psi}$?
+
+Bueno, sí y no. Resulta que en estadística, o incluso, en teoría de información
+cuántica, puede ocurrir que nos digan que la probabilidad de que un sistema se
+encuentre en un estado, digamos, $\ket{\alpha}$, sea $1/3$ y que la de
+encontrarse en $\ket{\beta}$ fuera $2/3$. Es decir, que no nos aseguren que el
+sistema se encuentre en un estado cuántico concreto.
+
+Este tipo de situación introduce una incertidumbre clásica, pues estas
+probabilidades son absolutamente clásicas. Además, en los estados cuánticos
+$\ket{\alpha}$ y $\ket{\beta}$ también hay probabilidades cuánticas.
+
+Todo esto nos complica bastante la vida, y su desarrollo sería muy laborioso,
+muy difuso y muy poco claro, si utilizamos la nomenclatura estándar del cálculo
+vectorial de toda la vida, y resulta que introduciendo esta matriz densidad
+$\mmm{\rho}$, todo es mucho más fácil e intuitivo.
+
+Podemos observar que la matriz densidad depende solo de los coeficientes de la
+función de onda en nuestra base, $\ket{\Psi} = a_0 \ket{0} + a_1 \ket{1}$
+\[
+  \mmm{\rho]}
+  = \begin{pmatrix}\rho_{00} & \rho_{01}\\ \rho_{10} & \rho_{11}\end{pmatrix}
+  = \begin{pmatrix}
+    a_{0} a_{0}^{*} & a_{0} a_{1}^{*} \\
+    a_{1} a_{0}^{*} & a_{1} a_{1}^{*}
+    \end{pmatrix}
+\]
+
+
+\subsection{Estado puro}
+Ahora mostraremos otra forma de obtener la matriz densidad
+\[
+  \ket{\Psi}\bra{\Psi}
+  = \begin{pmatrix}a_0 \\ a_1\end{pmatrix}
+  = \begin{pmatrix}a_{0}^{*} & a_{1}^{*}\end{pmatrix}
+  = \begin{pmatrix}
+    a_{0} a_{0}^{*} & a_{0} a_{1}^{*} \\
+    a_{1} a_{0}^{*} & a_{1} a_{1}^{*}
+  \end{pmatrix}
+  = \mmm{\rho}
+\]
+
+Decimos que un sistema se encuentra en un estado cuántico puro si
+\begin{equation}
+  \mmm{\rho} = \ket{\Psi} \bra{\Psi}
+\end{equation}
+
+\section{Propiedades de la matriz densidad}
 
 
 
