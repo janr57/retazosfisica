@@ -219,6 +219,73 @@ Decimos que un sistema se encuentra en un estado cuántico puro si
 \end{equation}
 
 \section{Propiedades de la matriz densidad}
+\begin{enumerate}
+\item {\bfseries $\mmm{\rho}$ es un Operador autoadjunto.}
+  Un operador $\mmm{\hat{A}}$ es autoadjunto si
+  $\mmm{\hat{A}}^\dagger = \mmm{\hat{A}}$
+  \begin{align*}
+    \mmm{\rho}^\dagger
+    &= \begin{pmatrix}
+      a_0 a_0^* & a_0 a_1^* \\
+      a_1 a_0^* & a_1 a_1^*
+    \end{pmatrix}^\dagger
+    = \begin{pmatrix}
+      (a_0 a_0^*)^* & (a_1 a_0^*)^* \\
+      (a_0 a_1^*)^* & (a_1 a_1^*)^*
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+      a_0^* a_0 & a_1^* a_0 \\
+      a_0^* a_1 & a_1^* a_1
+    \end{pmatrix}
+    = \begin{pmatrix}
+      a_0 a_0^* & a_0 a_1^* \\
+      a_1 a_0^* & a_1 a_1^*
+    \end{pmatrix}
+    = \mmm{\rho}
+  \end{align*}
+
+  Por tanto, la matriz densidad representa a un operador autoadjunto.
+  A partir de ahora representaremos de manera apropiada a este operador,
+  con el acento circunflejo, $\mmm{\hat{\rho}}$. Este operador describe el
+  estado de un sistema cuántico.
+  
+\item {\bfseries La traza de la matriz densidad es la unidad.}
+  La traza de una matriz cuadrada es la suma de sus elementos diagonales.
+  \[
+    \mmm{\hat{\rho}}
+    &= \begin{pmatrix}
+      a_0 a_0^* & a_0 a_1^* \\
+      a_1 a_0^* & a_1 a_1^*
+    \end{pmatrix}
+  \]
+
+  \[
+    \text{Tr}(\mmm{\hat\rho})}
+    = a_0 a_0^* + a_1 a_1^*
+    = |a_0|^2 + |a_1|^2 = 1
+  \]
+
+  Como $a_0$ y $a_1$ son las componentes del vector de estado del sistema, que
+  está normalizado, la suma de los cuadrados de sus módulos debe valer la
+  unidad.
+  \[
+    \ket{\Psi} = a_0 \ket{0} + a_1 \ket{1}
+  \]
+
+\item {\bfseries El operador $\mmm{\hat{\rho}}$ es positivo
+    ($\mmm{\hat{\rho}} > 0$).}
+  Esto quiere decir que para cualquier ket $\ket{u}$ en nuestro espacio de
+  Hilbert, se debe cumplir
+  \[
+    \braket{u|\mmm{\hat{\rho}}|u} > 0
+  \]
+
+  
+  
+  
+  
+  
+\end{enumerate}
 
 
 
