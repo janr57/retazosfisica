@@ -253,14 +253,14 @@ Decimos que un sistema se encuentra en un estado cuántico puro si
   La traza de una matriz cuadrada es la suma de sus elementos diagonales.
   \[
     \mmm{\hat{\rho}}
-    &= \begin{pmatrix}
+    = \begin{pmatrix}
       a_0 a_0^* & a_0 a_1^* \\
       a_1 a_0^* & a_1 a_1^*
     \end{pmatrix}
   \]
 
   \[
-    \text{Tr}(\mmm{\hat\rho})}
+    \text{Tr}(\mmm{\hat\rho})
     = a_0 a_0^* + a_1 a_1^*
     = |a_0|^2 + |a_1|^2 = 1
   \]
@@ -280,12 +280,78 @@ Decimos que un sistema se encuentra en un estado cuántico puro si
     \braket{u|\mmm{\hat{\rho}}|u} > 0
   \]
 
+  Otra manera de decirlo es que, dado que $\mmm{\hat{\rho}}$ es autoadjunto, se
+  puede diagonalizar (expresarse en su base propia) y los valores propios, aquí
+  $\lambda_1$ y $\lambda_2$, deben ser no negativos
+  \[
+    \mmm{\hat{\rho}}
+    = \begin{pmatrix}\lambda_1 & 0 \\ 0 \lambda_2\end{pmatrix}
+    \hspace{2em}\text{con } \lambda_1, \lambda_2 \geq 0    
+  \]
   
-  
-  
-  
-  
+  Obsérvese que, aunque los valores propios han de ser no negativos, no pueden
+  ser ambos cero, pues la traza de la matriz debe valer la unidad.
 \end{enumerate}
+
+Como resumen, recordamos que para que una matriz $\mmm{\hat{\rho}}$ pueda ser
+considerada matriz densidad, debe tener las tres propiedades que presentamos de
+forma simbólica
+\begin{enumerate}
+\item $\mmm{\hat{\rho}}^\dagger = \mmm{\hat{\rho}}$
+\item $\text{Tr}(\mmm{\hat\rho}) = 1$
+\item $\mmm{\hat{\rho}} > 0$
+\end{enumerate}
+
+\subsection{Combinación lineal de matrices densidad}
+Ahora nos interesa saber si una combinación lineal de matrices densidad, como
+\[
+  \mmm{\hat{\rho}} = \alpha \mmm{\hat{\rho}}_1 + \beta \mmm{\hat{\rho}}_2
+\]
+es también una matriz densidad.
+
+Para que esto sea así, la combinación lineal debe cumplir las tres propiedades
+anteriores.
+
+Fijémonos en la tercera propiedad ($\mmm{\hat{\rho}}$, como
+$\mmm{\hat{\rho}}_1$ y $\mmm{\hat{\rho}}_2$ son matrices densidad, ambas son
+positivas, $\mmm{\hat{\rho}}_1 > 0$ y $\mmm{\hat{\rho}}_2 > 0$. Podremos decir,
+sin demostrar, que si los coeficientes $\alpha$ y $\beta$ son números reales
+positivos
+\[
+  \alpha, \beta \in \mathbb{R}^{+} \cup \set{0}
+\]
+entonces la combinación lineal sería definida positiva.
+
+También podríamos demostrar que si $\mmm{\hat{\rho}}_1$ y $\mmm{\hat{\rho}}_2$
+son operadores autoadjuntos y $\alpha$ y $\beta$ son números reales, entonces,
+$\mmm{\hat{\rho}}$ también es autoadjunta.
+
+Nos queda el valor de la traza de la combinación lineal. La traza es una
+operación lineal, y por tanto
+\[
+  \text{Tr}{\mmm{\hat\rho}}
+  = \text{Tr}(\alpha \mmm{\hat{\rho}}_1 + \beta \mmm{\hat{\rho}}_2)
+  = \alpha\,\text{Tr}(\mmm{\hat{\rho}}_1)+\beta\,\text{Tr}(\mmm{\hat{\rho}}_2)
+    = \alpha \cdot 1 + \beta \cdot 1
+    = \alpha + \beta
+\]
+Luego, para que se cumpla $\text{Tr}\mmm{\hat{\rho}} = 1$, la suma de los
+coeficientes debe valer la unidad
+\[
+  \alpha + \beta = 1
+\]
+
+Hemos llegado a la conclusión de que si construyo una nueva matriz densidad
+mediante una combinación lineal de otras, obtendré una matriz densidad, con
+tal de que los coeficientes sean reales no negativos y sumen la unidad.
+\[
+  \mmm{\hat{\rho}} = \sum_i P_i \mmm{\hat{\rho}}_i
+  \text{, con } P_i \geq 0 \text{ y } \sum_i P_i = 1
+\]
+
+Esta propiedad tiene que ver con una distribución de probabilidad discreta
+clásica.
+
 
 
 
