@@ -12,38 +12,41 @@
 \chapter{Matriz Densidad}
 
 \section{Introducción}
-Vamos a utilizar un espacio de Hilbert $\left(\mathbb{C}^2\right)$, de
-dimensión 2, por comodidad
+Por comodidad, utilizaremos un espacio de Hilbert $\left(\mathbb{C}^2\right)$,
+de dimensión 2
+
 \[
   \mathlarger{\mathcal{H} = \mathbb{C}^2}
 \]
 
-Lo siguiente es elegir los símbolos de una base. Se podrían elegir algunos
-símbolos como $\ket{\varphi_1}$ y $\ket{\varphi_2}$, $\ket{e_1}$ y $\ket{e_2}$,
-$\ket{a}$ y $\ket{b}$, etc. Pero vamos a introducir una nomenclatura que es
+Ahora, elegiremos los símbolos para una base de este espacio. Para ello, se
+podrían elegir algunos símbolos como $\ket{\varphi_1}$ y $\ket{\varphi_2}$,
+$\ket{e_1}$ y $\ket{e_2}$, o $\ket{a}$ y $\ket{b}$, entre otros. En el fondo,
+son solo símbolos, sin más, Pero vamos a introducir una nomenclatura que es
 propia de la información cuántica y que hace referencia al \emph{qbit}.
-De esta forma, la base\footnotemark{} la representaríamos como
+
+Así, representaremos la base\footnotemark{} como
 \footnotetext{La base está formada por dos vectores en un espacio de Hilbert
   de dimensión 2. En general, tendría $n$ vectores.}
 \[
   B = \{\ket{0}, \ket{1}\}
 \]
 
-El cero y el uno son solo etiquetas. No hay nada profundo en eso, solo inspiran
-al bit clásico. Únicamente decir, por completitud, que por \emph{qbit} se
-entiende aquel vector que es una combinación lineal de estos dos vectores de la
-base
+Repetimos que, el cero y el uno son solo etiquetas. No hay nada profundo en
+esto, solo recuerdan al bit clásico. Únicamente añadir, por completitud, que
+por \emph{qbit} se entiende aquel vector que es una combinación lineal de estos
+dos vectores de la base
 \[
-  \ket{\Psi} = a \ket{0} + b \ket{1}
+  \ket{\Psi} = a \ket{0} + b \ket{1} ;
+  \hspace{2em} a, b \in \mathbb{C}
 \]
-pero no vamos a entrar en esto. Dejamos los \emph{qbits} a un lado.
+aunque no vamos a entrar en esto. Dejaremos los \emph{qbits} a un lado.
 
-A partir de ahora solo consideramos tener un espacio de Hilbert de dimensión 2
-y estos dos vectores de la base.
-
+A partir de ahora solo nos interesan, el  espacio de Hilbert de dimensión 2
+y dos vectores de la base.
 Como es costumbre cuando se trabaja en un espacio de dimensión finita, podemos
-utilizar una expresión matricial. Así, podremos representar los vectores de la
-base como
+utilizar una expresión matricial. Así, representaremos los vectores de la base
+como
 \[
   \ket{0} = \begin{pmatrix}1 \\ 0\end{pmatrix}
   \hspace{4em}
@@ -61,19 +64,19 @@ y sus duales
 \]
 
 \subsection{Operadores autoadjuntos}
-En mecánica cuántica, un operador está asociado a un observable si el adjunto
-del operador coincide con él mismo, de manera que sus valores propios serían
-reales. Un operador así se llama autoadjunto
+En mecánica cuántica, un operador está asociado a un observable si su adjunto
+coincide con él mismo; en tal caso, sus valores propios serían reales. Un
+operador así se denomina \emph{autoadjunto}
 \[
   \hat{A}^\dagger = \hat{A}
 \]
 
-Cuando un operador $\hat{A}$ es autoadjunto, se puede encontrar una nueva base
-propia del operador
+Para cualquier operador autoadjunto $\hat{A}$, se puede encontrar una nueva
+base, que es propia del operador
 \[
   \{\ket{a_1}, \ket{a_2}\}
 \]
-que, por ser base es ortogonal, y por ser autoadjunto, sus valores propios son
+que, por ser base, es ortogonal y, por ser autoadjunto, sus valores propios son
 reales
 \begin{align*}
   &\hat{A} \ket{a_1} = \lambda_1 \ket{a_1}\\
@@ -86,9 +89,9 @@ A menos que se diga lo contrario, los operadores que nos encontremos serán
 autoadjuntos.
 
 \subsection{Valor esperado de un operador}
-Supongamos que un sistema está descrito por el estado $\ket{\Psi}$. Nos
-preguntamos acerca del valor esperado de un operador cuando el sistema está en
-ese estado.
+Supongamos que un sistema está descrito por el estado $\ket{\Psi}$, y nos
+preguntamos acerca del valor esperado de un cierto operador $\hat{A}$, en  ese
+estado.
 
 Si estamos en un mundo de dimensión 2, y la base que utilizamos es
 $\{\ket{0}, \ket{1}\}$, el estado se puede expresar como una combinación lineal
@@ -96,11 +99,11 @@ de los vectores de la base
 \[
   \ket{\Psi} = a_0 \ket{0} + a_1 \ket{1}
   \text{, donde }
-  a_i \in \mathbb{C}
+  a_1, a_2 \in \mathbb{C}
 \]
 
-Se define el \emph{valor esperado del observable} $\hat{A}$, cuando el sistema
-está en el estado $\ket{\Psi}$, mediante el producto escalar
+El \emph{valor esperado del observable} $\hat{A}$, cuando el sistema está en el
+estado $\ket{\Psi}$, se expresa mediante el producto escalar
 \begin{align*}
   \braket{\hat{A}}_{\Psi}
   &= \braket{\Psi | \hat{A} | \Psi}
@@ -118,11 +121,7 @@ está en el estado $\ket{\Psi}$, mediante el producto escalar
   &= a_{0} a_{0}^{*} A_{00}
     + a_{1} a_{0}^{*} A_{01}
     + a_{0} a_{1}^{*} A_{10}
-    + a_{1} a_{1}^{*} A_{11}\\
-  &= \rho_{00} A_{00}
-    + \rho_{10} A_{01}
-    + \rho_{01} A_{10}
-    + \rho_{11} A_{11}
+    + a_{1} a_{1}^{*} A_{11}
 \end{align*}
 donde hemos utilizado $A_{ij} = \braket{i|\hat{A}|j}$.
 
@@ -137,9 +136,9 @@ Si ahora llamamos $\rho_{ij} = a_{i} a_{j}^{*}$, obtenemos
 \end{equation}
 Obsérvese que el valor esperado de un operador autoadjunto es un número real.
 
-Las $\rho_{ij}$ las podríamos interpretar como elementos de una matriz $2\times 2$.
-Por otro lado, sabemos por mecánica cuántica que las $A_{ij}$ son elemenntos de una
-matriz. Así que
+Las $\rho_{ij}$ las podríamos interpretar como elementos de una matriz
+$2\times 2$. Por otro lado, sabemos por mecánica cuántica que las $A_{ij}$ son
+elementos de una matriz. Así que
 \[
   \mmm{\rho}
   = \begin{pmatrix}\rho_{00} & \rho_{01} \\ \rho_{10} & \rho_{11} \end{pmatrix}
@@ -148,8 +147,9 @@ matriz. Así que
   = \begin{pmatrix}A_{00} & A_{01} \\ A_{10} & A_{11} \end{pmatrix}
 \]
 
-Pero, al multiplicar estas dos matrices $2\times 2$ obtenemos otra matriz
-$2\times 2$, no un número, aunque, si nos fijamos en los elementos diagonales
+Pero, al multiplicar estas dos matrices $2\times 2$ obtendríamos otra matriz
+$2\times 2$, no un número. Pero, observamos que el valor esperado coincide 
+con la suma de los elementos diagonales
 \[
   \mmm{\rho} \mmm{A}
   = \begin{pmatrix}\rho_{00} & \rho_{01} \\ \rho_{10} & \rho_{11} \end{pmatrix}
@@ -160,48 +160,50 @@ $2\times 2$, no un número, aunque, si nos fijamos en los elementos diagonales
   \end{pmatrix}
 \]
 
-Pero, si nos fijamos en los elementos diagonales, observamos que el valor
-esperado es la suma de estos. La suma de los elementos diagonales de una matriz
-cuadrada es la \emph{traza}
+La suma de los elementos diagonales de una matriz cuadrada es su \emph{traza}
 \[
   \braket{\hat{A}}_{\Psi}
   = \braket{\Psi|\hat{A}|\Psi}
-  = \text{Tr}(\mmm{\rho}\mmm{A})
+  = \text{Tr}(\mmm{\rho}\mmm{\hat{A}})
 \]
 
 ¿Por qué nos complicamos tanto para calcular el valor esperado de un observable
 en el estado $\ket{\Psi}$, si lo podemos calcular directamente como
 $\braket{\Psi|\hat{A}|\Psi}$?
 
-Bueno, sí y no. Resulta que en estadística, o incluso, en teoría de información
-cuántica, puede ocurrir que nos digan que la probabilidad de que un sistema se
-encuentre en un estado, digamos, $\ket{\alpha}$, sea $1/3$ y que la de
-encontrarse en $\ket{\beta}$ fuera $2/3$. Es decir, que no nos aseguren que el
-sistema se encuentre en un estado cuántico concreto.
+Bueno, nos complicamos algo, pero en ocasiones es importante hacerlo. Resulta
+que en estadística, o incluso, en teoría de información cuántica, podría
+ocurrir que nos dijeran que la probabilidad de que un sistema se encontrara en
+un estado, digamos, $\ket{\alpha}$, fuera $1/3$ y la de encontrarse en
+$\ket{\beta}$ fuera $2/3$. Es decir, que no nos aseguren que el sistema se
+encuentre en un estado cuántico concreto.
 
 Este tipo de situación introduce una incertidumbre clásica, pues estas
 probabilidades son absolutamente clásicas. Además, en los estados cuánticos
-$\ket{\alpha}$ y $\ket{\beta}$ también hay probabilidades cuánticas.
+$\ket{\alpha}$ y $\ket{\beta}$, también hay probabilidades cuánticas.
 
 Todo esto nos complica bastante la vida, y su desarrollo sería muy laborioso,
-muy difuso y muy poco claro, si utilizamos la nomenclatura estándar del cálculo
-vectorial de toda la vida, y resulta que introduciendo esta matriz densidad
-$\mmm{\rho}$, todo es mucho más fácil e intuitivo.
+muy difuso y muy poco claro si utilizáramos la nomenclatura estándar del
+cálculo vectorial de toda la vida, y resulta que introduciendo esta matriz
+densidad $\mmm{\rho}$, todo es mucho más fácil e intuitivo.
 
 Podemos observar que la matriz densidad depende solo de los coeficientes de la
 función de onda en nuestra base, $\ket{\Psi} = a_0 \ket{0} + a_1 \ket{1}$
 \[
-  \mmm{\rho]}
+  \mmm{\rho}
   = \begin{pmatrix}\rho_{00} & \rho_{01}\\ \rho_{10} & \rho_{11}\end{pmatrix}
   = \begin{pmatrix}
     a_{0} a_{0}^{*} & a_{0} a_{1}^{*} \\
     a_{1} a_{0}^{*} & a_{1} a_{1}^{*}
     \end{pmatrix}
 \]
-
+así que está relacionada directamente con el estado $\ket{Psi}$.
 
 \subsection{Estado puro}
-Ahora mostraremos otra forma de obtener la matriz densidad
+Ahora mostraremos otra forma de obtener la matriz densidad, multiplicando el
+estado por su dual, en este orden\footnotemark{}
+\footnotetext{Este producto no es escalar. Se conoce como producto tensorial.
+  Ya hablaremos más adelante de él.}
 \[
   \ket{\Psi}\bra{\Psi}
   = \begin{pmatrix}a_0 \\ a_1\end{pmatrix}
@@ -212,17 +214,24 @@ Ahora mostraremos otra forma de obtener la matriz densidad
   \end{pmatrix}
   = \mmm{\rho}
 \]
+Este resultado lo hemos obtenido porque el estado $\ket{\Psi}$ era un
+estado cuántico con seguridad. Si hubiera sido un estado cuántico con una
+cierta incertidumbre clásica, lo que se conoce como \emph{estado mixto}, no
+se habría obtenido esto.
 
-Decimos que un sistema se encuentra en un estado cuántico puro si
+Diremos pues, que un sistema se encuentra en un estado cuántico puro si
 \begin{equation}
   \mmm{\rho} = \ket{\Psi} \bra{\Psi}
 \end{equation}
 
 \section{Propiedades de la matriz densidad}
 \begin{enumerate}
-\item {\bfseries $\mmm{\rho}$ es un Operador autoadjunto.}
-  Un operador $\mmm{\hat{A}}$ es autoadjunto si
-  $\mmm{\hat{A}}^\dagger = \mmm{\hat{A}}$
+\item {\bfseries $\mmm{\rho}$ es un operador autoadjunto\footnotemark{}.}
+  \footnotetext{El que sea autoadjunto no implica, necesariamente, que
+    represente a un observable físico. La proposición inversa sí es cierta.}
+  Recordemos que un operador $\mmm{\hat{A}}$ es autoadjunto si su adjunto
+  coincide con él mismo. Vamos a demostrar que la matriz densidad tiene esta
+  propiedad
   \begin{align*}
     \mmm{\rho}^\dagger
     &= \begin{pmatrix}
@@ -281,11 +290,19 @@ Decimos que un sistema se encuentra en un estado cuántico puro si
   \]
 
   Otra manera de decirlo es que, dado que $\mmm{\hat{\rho}}$ es autoadjunto, se
-  puede diagonalizar (expresarse en su base propia) y los valores propios, aquí
-  $\lambda_1$ y $\lambda_2$, deben ser no negativos
+  puede diagonalizar ---expresarse en su base propia---
+  \[
+    B_u = \set{\ket{u_1}, \ket{u_2}}
+  \]
+  y los valores propios, aquí $\lambda_1$ y $\lambda_2$, deben ser no negativos
+  \begin{align*}
+    \hat{\rho} \ket{u_1} &= \lambda_1 \ket{u_1}\\
+    \hat{\rho} \ket{u_2} &= \lambda_2 \ket{u_2}
+  \end{align*}
+  El operador densidad diagonalizado tendría esta forma
   \[
     \mmm{\hat{\rho}}
-    = \begin{pmatrix}\lambda_1 & 0 \\ 0 \lambda_2\end{pmatrix}
+    = \begin{pmatrix}\lambda_1 & 0 \\ 0 & \lambda_2\end{pmatrix}
     \hspace{2em}\text{con } \lambda_1, \lambda_2 \geq 0    
   \]
   
@@ -308,49 +325,66 @@ Ahora nos interesa saber si una combinación lineal de matrices densidad, como
   \mmm{\hat{\rho}} = \alpha \mmm{\hat{\rho}}_1 + \beta \mmm{\hat{\rho}}_2
 \]
 es también una matriz densidad.
-
 Para que esto sea así, la combinación lineal debe cumplir las tres propiedades
 anteriores.
 
-Fijémonos en la tercera propiedad ($\mmm{\hat{\rho}}$, como
-$\mmm{\hat{\rho}}_1$ y $\mmm{\hat{\rho}}_2$ son matrices densidad, ambas son
-positivas, $\mmm{\hat{\rho}}_1 > 0$ y $\mmm{\hat{\rho}}_2 > 0$. Podremos decir,
-sin demostrar, que si los coeficientes $\alpha$ y $\beta$ son números reales
-positivos
-\[
-  \alpha, \beta \in \mathbb{R}^{+} \cup \set{0}
-\]
-entonces la combinación lineal sería definida positiva.
-
-También podríamos demostrar que si $\mmm{\hat{\rho}}_1$ y $\mmm{\hat{\rho}}_2$
-son operadores autoadjuntos y $\alpha$ y $\beta$ son números reales, entonces,
-$\mmm{\hat{\rho}}$ también es autoadjunta.
-
-Nos queda el valor de la traza de la combinación lineal. La traza es una
-operación lineal, y por tanto
-\[
-  \text{Tr}{\mmm{\hat\rho}}
-  = \text{Tr}(\alpha \mmm{\hat{\rho}}_1 + \beta \mmm{\hat{\rho}}_2)
-  = \alpha\,\text{Tr}(\mmm{\hat{\rho}}_1)+\beta\,\text{Tr}(\mmm{\hat{\rho}}_2)
+\begin{description}
+\item[Matriz definida positiva:] Como $\mmm{\hat{\rho}}_1$ y
+  $\mmm{\hat{\rho}}_2$ son matrices densidad, ambas son positivas
+  \[
+    \mmm{\hat{\rho}}_1 > 0
+    \hspace{1em}y\hspace{1em}
+    \mmm{\hat{\rho}}_2 > 0
+  \]
+  entonces, podremos decir, sin demostrar, que si los coeficientes $\alpha$ y
+  $\beta$ son números reales no negativos (ambos no nulos)
+  \[
+    \alpha, \beta \in \mathbb{R}^{+} \cup \set{0}
+  \]
+  entonces la combinación lineal $\mmm{\hat{\rho}}$, también sería definida
+  positiva.
+  
+\item[Matriz ajunta:]
+  También podríamos demostrar que si $\mmm{\hat{\rho}}_1$ y
+  $\mmm{\hat{\rho}}_2$ son operadores autoadjuntos y $\alpha$ y $\beta$ son
+  números reales, entonces, $\mmm{\hat{\rho}}$ también es autoadjunta.
+  
+\item[Matriz con traza unidad]
+  La traza de una matriz es una operación lineal, y por tanto
+  \[
+    \text{Tr}{\mmm{\hat\rho}}
+    = \text{Tr}(\alpha \mmm{\hat{\rho}}_1 + \beta \mmm{\hat{\rho}}_2)
+    = \alpha\,\text{Tr}(\mmm{\hat{\rho}}_1)
+    + \beta\,\text{Tr}(\mmm{\hat{\rho}}_2)
     = \alpha \cdot 1 + \beta \cdot 1
     = \alpha + \beta
-\]
-Luego, para que se cumpla $\text{Tr}\mmm{\hat{\rho}} = 1$, la suma de los
-coeficientes debe valer la unidad
-\[
-  \alpha + \beta = 1
-\]
+  \]
+  Luego, para que se cumpla $\text{Tr}\mmm{\hat{\rho}} = 1$, la suma de los
+  coeficientes debe valer la unidad
+  \[
+    \alpha + \beta = 1
+  \]
+\end{description}
 
 Hemos llegado a la conclusión de que si construyo una nueva matriz densidad
 mediante una combinación lineal de otras, obtendré una matriz densidad, con
-tal de que los coeficientes sean reales no negativos y sumen la unidad.
+tal de que los coeficientes sean reales no negativos y sumen la unidad
 \[
   \mmm{\hat{\rho}} = \sum_i P_i \mmm{\hat{\rho}}_i
-  \text{, con } P_i \geq 0 \text{ y } \sum_i P_i = 1
+  \text{,}\hspace{1em} \text{con} P_i \geq 0
+  \hspace{1em}\text{ y }\hspace{1em} \sum_i P_i = 1
 \]
 
-Esta propiedad tiene que ver con una distribución de probabilidad discreta
+Esta propiedad está relacionada con una distribución de probabilidad discreta
 clásica.
+
+Ahora volvemos al principio de nuestra discusión. Supongamos que tenemos un
+sistema cuántico, que puede estar descrito por los estados $\ket{\Psi_1}$, y
+$\ket{\Psi_2}$, que pueden ser cualesquiera, no tienen que ser ortogonales ni
+nada. Además, supongamos que nos dicen que la probabilidad de que el sistema
+esté descrito por $\ket{\Psi_1}$ es, por ejemplo, de $1/4$ y, por tanto, la
+probabilidad de que estuviera descrito por $\ket{\Psi_2}$ sería de $3/4$
+
 
 
 
