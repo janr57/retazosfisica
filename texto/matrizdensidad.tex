@@ -385,6 +385,50 @@ nada. Además, supongamos que nos dicen que la probabilidad de que el sistema
 esté descrito por $\ket{\Psi_1}$ es, por ejemplo, de $1/4$ y, por tanto, la
 probabilidad de que estuviera descrito por $\ket{\Psi_2}$ sería de $3/4$
 
+\begin{figure}[ht]
+  % Escala
+  \def\scl{1}
+  % Eje x
+  \pgfmathsetmacro{\XMLONG}{0}
+  \pgfmathsetmacro{\XPLONG}{3}
+  % Eje y
+  \pgfmathsetmacro{\YMLONG}{0}
+  \pgfmathsetmacro{\YPLONG}{3}
+  % Ángulo rotado
+  \pgfmathsetmacro{\ANGROT}{20}
+  % Vector P
+  \pgfmathsetmacro{\PMOD}{2.5}
+  \pgfmathsetmacro{\PANG}{60}
+  % Vector P'
+  \pgfmathsetmacro{\PPRIMAMOD}{\PMOD}
+  \pgfmathsetmacro{\PPRIMAANG}{\PANG - \ANGROT}
+  % 
+  \centering
+  \begin{tikzpicture}[%
+    scale=\scl,
+    every node/.style={black,font=\small},
+    eje/.style={->},
+    vector/.style={-{Latex}, shorten >=1.2pt, line width=.8pt},
+    vectorrotado/.style={vector, draw=green!50!black},
+    pcirculo/.style={fill=red, draw=black},
+    pprimacirculo/.style={green!90!black, draw=black},
+    background/.style={
+      line width=\bgborderwidth,
+      draw=\bgbordercolor,
+      fill=\bgcolor,
+    },
+    ]
+    % Coordenadas
+    \coordinate (O) at (0,0);
+    \node[cloud, draw, fill=gray!20, aspect=2]{SISTEMA\hspace{0.2em} $\ket{?}$};
+    %\begin{scope}[on background layer]
+    %  \node [background, fit= (incx) (incy) (letraejex) (letraejey)] {};
+    %\end{scope}
+  \end{tikzpicture}
+  \caption{Giro infinitesimal antihorario $\varepsilon$.}
+  %\label{fig:gli-girovector}
+\end{figure}
+
 
 
 
