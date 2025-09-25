@@ -137,6 +137,23 @@
 %% --------------------------------------------------------------------
 
 
+%\tikzset{%
+%  pics/.cd,
+%  mynode/.style args={#1#2#3#4#5#6}{
+%    code={\node[inner sep=0pt,outer sep=0pt] at (0,0) (a) {};
+%      \path[fill=#1] 
+%      (a) to[bend right=#4] ++(#2,0) -- ++(0,#3) to[bend left=#5] ++(-#2,0) -- cycle;
+%      \path[postaction={decorate},           % remove this path if no text decoration.
+%      decoration={raise=-15pt,
+%        text along path, text={#6},
+%        text align={left indent ={1cm}}}] 
+%      (a) to[bend right=#4] ++(#2,0); 
+%    }},
+%}
+
+
+
+
 
 %%% Local Variables:
 %%% mode: latex

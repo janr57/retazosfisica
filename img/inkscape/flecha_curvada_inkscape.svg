@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="flecha_curvada.svg"
+   inkscape:export-filename="flecha_curvadano.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.8814659"
+     inkscape:cx="388.26109"
+     inkscape:cy="370.45583"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="fill:#ff0000;stroke-width:0.236385"
+       d="m 88.944486,92.230139 15.597204,-3.122011 c 0,0 1.08017,7.532799 13.2575,27.531602 5.78394,9.49895 17.71251,27.16034 17.71251,27.16034 0,0 -9.27173,-0.81316 -13.72197,0.8221 -4.09623,1.50521 -11.91744,8.59938 -11.91744,8.59938 0,0 -8.9676,-18.55973 -12.515006,-28.83097 C 93.778991,114.0299 89.315736,93.715099 89.315736,93.715099 Z"
+       sodipodi:nodetypes="ccscscscc" />
+    <path
+       id="path1"
+       style="fill:#ff0000;stroke-width:0.264583"
+       inkscape:transform-center-y="-5.4071253"
+       d="m 118.61319,86.982576 c 0.0785,-0.08994 -4.07645,0.07788 -8.15799,0.80314 -5.45826,0.969892 -12.303341,4.704953 -12.303341,4.704953 0,0 -8.071452,0.69723 -14.093663,2.11129 -3.566327,0.837404 -9.230591,4.428671 -7.633301,1.287408 2.750137,-5.408477 5.470523,-11.012274 7.6779,-16.831223 5.050125,-13.312826 7.256023,-20.628129 7.256023,-20.628129 0,0 4.451204,6.369328 13.767812,16.104421 6.24464,6.525138 13.48656,12.44814 13.48656,12.44814 z"
+       inkscape:transform-center-x="-3.342481"
+       sodipodi:nodetypes="cscssscsc" />
+  </g>
+</svg>

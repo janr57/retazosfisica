@@ -8,7 +8,8 @@ FILES =	retazosfisica.pkg.sty\
 	portada/portada.tex\
 	tablacontenidos/tablacontenidos.tex\
 	texto/mecanicaestadistica.tex\
-	$(IMGSTATICDIR)/Cc-by-nc-sa_icon.eps
+	$(IMGSTATICDIR)/Cc-by-nc-sa_icon.eps\
+	$(IMGSTATICDIR)/flecha_curvada.eps
 
 retazosfisica.pdf: retazosfisica.tex $(FILES)
 

@@ -264,9 +264,8 @@ Diremos pues, que un sistema se encuentra en un \emph{estado cuántico puro} si
   \end{align*}
 
   Por tanto, la matriz densidad representa a un operador autoadjunto.
-  A partir de ahora representaremos de manera apropiada a este operador,
-  con el acento circunflejo, $\mmm{\hat{\rho}}$. Este operador describe el
-  estado de un sistema cuántico.
+  En ciertas ocasiones, representaremos este operadorcon el acento circunflejo,
+  $\mmm{\hat{\rho}}$. Este operador describe el estado de un sistema cuántico.
   
 \item {\bfseries La traza de la matriz densidad es la unidad.}
   La traza de una matriz cuadrada es la suma de sus elementos diagonales.
@@ -389,7 +388,7 @@ Esta propiedad está relacionada con una distribución de probabilidad discreta
 clásica.
 
 Ahora, volvemos al principio de nuestra discusión. Supongamos que tenemos un
-sistema cuántico, que puede estar descrito por los estados $\ket{\Psi_1}$, y
+sistema cuántico, que puede estar descrito por los estados $\ket{\Psi_1}$ y
 $\ket{\Psi_2}$, que pueden ser cualesquiera, no tienen que ser ortogonales ni
 nada. Además, supongamos que nos dicen que la probabilidad de que el sistema
 esté descrito por $\ket{\Psi_1}$ es, por ejemplo, de $1/4$ y, por tanto, la
@@ -430,8 +429,22 @@ probabilidad de que estuviera descrito por $\ket{\Psi_2}$ sería de $3/4$
     ]
     % Coordenadas
     \coordinate (O) at (0,0);
-    \node[cloud, draw, fill=gray!20, aspect=2]
+    \node (nube) [cloud, draw, fill=gray!20, aspect=2]
     {SISTEMA\hspace{0.2em} $\ket{?}$};
+
+    \node[inner sep=0pt]
+    (myimage) at (0.2,-1.05){%
+      \includegraphics[width=0.06\textwidth]{./img/static/flecha_curvada.eps}
+    };
+    \node at (0.5, -1.93) {\Large $\hat{\rho}$};
+    \node (psi1) at (4, 1.0) {$\ket{\Psi_1}\hspace{1em} P_1 = 1/4$};
+    \node (psi2) at (4, -1.0) {$\ket{\Psi_2}\hspace{1em} P_2 = 3/4$};
+    \coordinate (int1) at (0.90,0.28);
+    \coordinate (int2) at (0.90,-0.28);
+    %\filldraw[fill=red] (0.90,0.28) circle[radius=2pt];
+    %\filldraw[fill=red] (0.90,-0.28) circle[radius=2pt];
+    \draw[-Stealth, out=190, in=35] (psi1.180) to (int1);
+    \draw[-Stealth, out=170, in=-35] (psi2.180) to (int2);
     %\begin{scope}[on background layer]
     %  \node [background, fit= (incx) (incy) (letraejex) (letraejey)] {};
     %\end{scope}
@@ -447,7 +460,7 @@ es $3/4$.
 \emph{ket} ---que no sabemos cuál es---. Lo mejor es hacerlo a través de la
 matriz densidad que va a ser
 \[
-  \mmm{\rho} = \dfrac{1}{4}\,\mmm{\rho_1} + \dfrac{3}{4}\,\mmm{\rho_2}
+  \mmm{\hat\rho} = \dfrac{1}{4}\,\mmm{\hat\rho_1} + \dfrac{3}{4}\,\mmm{\hat\rho_2}
 \]
 donde $\mmm{\rho_1} = \ket{\Psi_1}\bra{\Psi_1}$ y
 $\mmm{\rho_2} = \ket{\Psi_2}\bra{\Psi_2}$.
